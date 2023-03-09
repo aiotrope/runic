@@ -9,7 +9,7 @@ const errorHandler = (error, req, res, next) => {
   logger.error(error.message)
 
   if (error.name === 'CastError') {
-    return res.status(404).json({ error: `${error.value} is not valid ID!` })
+    return res.status(400).json({ error: `${error.value} is not valid ID!` })
   }
 
   if (error.name === 'NotFoundError') {

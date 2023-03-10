@@ -8,8 +8,6 @@ import dbConnection from './utils/db'
 import { morganMiddleware } from './utils/logger'
 import middleware from './utils/middleware'
 
-import indexRouter from './controllers/index'
-import usersRouter from './controllers/users'
 import personRouter from './controllers/person'
 
 const app = express()
@@ -32,10 +30,6 @@ app.use(helmet())
 app.use(require('sanitize').middleware)
 
 app.use(morganMiddleware)
-
-app.use('/', indexRouter)
-
-app.use('/users', usersRouter)
 
 app.use('/api', personRouter)
 

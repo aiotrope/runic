@@ -62,7 +62,9 @@ const List = () => {
           {fetchPersons?.data?.map(({ id, name, number }) => (
             <Tr key={id}>
               <Td>
-                <Link to={`/person/${id}`}>{name}</Link>
+                <Link to={`/person/${id}`} id="name-link">
+                  {name}
+                </Link>
               </Td>
               <Td>{number}</Td>
               <Td>
@@ -70,6 +72,7 @@ const List = () => {
                   colorScheme="red"
                   size="xs"
                   onClick={() => deleteMutation.mutate(id)}
+                  id="delete-btn"
                 >
                   Delete
                 </Button>

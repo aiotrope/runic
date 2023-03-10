@@ -49,13 +49,12 @@ const Person = () => {
 
   const schema = yup
     .object({
-      name: yup.string().min(3).trim().required().default(data?.name),
+      name: yup.string().min(3).trim().required(),
       number: yup
         .string()
         .trim()
         .required()
-        .matches(regex, 'Invalid phone number!')
-        .default(data?.number),
+        .matches(regex, 'Invalid phone number!'),
     })
     .required()
 
@@ -76,12 +75,12 @@ const Person = () => {
     updateMutation.mutate(dataObj)
   }
 
-  React.useEffect(() => {
+  /* React.useEffect(() => {
     let defaultValues = {}
     defaultValues.name = data?.name
     defaultValues.number = data?.number
     reset({ ...defaultValues })
-  }, [data?.name, data?.number, reset])
+  }, [data?.name, data?.number, reset]) */
 
   if (isLoading || updateMutation.isLoading) {
     return (
@@ -157,6 +156,7 @@ const Person = () => {
                 size="lg"
                 height="48px"
                 width="100%"
+                id="update-btn"
               >
                 Update
               </Button>

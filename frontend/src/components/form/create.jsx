@@ -118,6 +118,7 @@ const CreateForm = () => {
               size="lg"
               height="48px"
               width="100%"
+              id="create-btn"
             >
               Add
             </Button>

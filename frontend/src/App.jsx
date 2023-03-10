@@ -14,7 +14,9 @@ const App = () => {
       <Container>
         <Box mt="6rem">
           <Heading as="h1" size="2xl">
-            <Link to={'/'} id="app-name">Phonebook</Link>
+            <Link to={'/'} id="app-name">
+              Phonebook
+            </Link>
           </Heading>
         </Box>
 

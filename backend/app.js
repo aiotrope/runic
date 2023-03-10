@@ -17,10 +17,10 @@ const app = express()
 dbConnection()
 
 // view engine setup
-app.set('views', path.join(__dirname, '../views'))
-app.set('view engine', 'ejs')
+//app.set('build', path.join(__dirname, '../build'))
+//app.set('view engine', 'ejs')
 
-app.use(express.static(path.join(__dirname, '../public')))
+app.use(express.static(path.join(__dirname, '../build')))
 
 app.use(cookieParser())
 
@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use(cors())
 
-app.use(express.static('build'))
+//app.use(express.static('build'))
 
 app.use(helmet())
 
@@ -43,6 +43,11 @@ app.use('/', indexRouter)
 app.use('/users', usersRouter)
 
 app.use('/api', personRouter)
+
+if (process.env.NODE_ENV === 'test') {
+  const testingRouter = require('./controllers/testing')
+  app.use('/api/testing', testingRouter)
+}
 
 app.use(middleware.endPoint404)
 

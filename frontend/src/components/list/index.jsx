@@ -25,7 +25,7 @@ const List = () => {
   })
 
   const deleteMutation = useMutation({
-    mutationFn: (id) => http.delete(`/persons/${id}`),
+    mutationFn: (id) => http.delete(`/api/persons/${id}`),
     onSuccess: (data) => {
       alert(data?.data?.details)
       queryClient.invalidateQueries({

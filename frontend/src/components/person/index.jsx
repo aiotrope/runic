@@ -35,7 +35,7 @@ const Person = () => {
   )
 
   const updateMutation = useMutation({
-    mutationFn: (dataObj) => http.put(`/persons/${id}`, dataObj),
+    mutationFn: (dataObj) => http.put(`/api/persons/${id}`, dataObj),
     onSuccess: (data) => {
       alert(`${data?.data?.name} info updated!`)
       reset()

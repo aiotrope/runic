@@ -24,7 +24,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build:dev": "NODE_ENV=development react-scripts build",
+    "build:prod": "NODE_ENV=production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -47,8 +48,6 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^12.7.0",
-    "eslint-plugin-cypress": "^2.12.1",
     "sass": "^1.58.3"
   },
   "proxy": "http://localhost:8000"

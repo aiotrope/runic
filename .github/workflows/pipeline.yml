@@ -5,8 +5,10 @@ on:
   # branches: ['main']
   # paths-ignore:
   # - 'README.md'
-  pull_request_review:
-    types: [submitted]
+  pull_request:
+    types: [opened, synchronize, closed]
+    paths-ignore:
+      - 'README.md'
 
 # env:
 # VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -63,9 +65,8 @@ jobs:
           wait-on: http://localhost:8000
 
   release:
-    if: github.event.review.state == 'approved'
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     needs: [build]
     steps:
-      - run: echo "This PR was approved"
-   
+      - run: echo "This PR was merged"

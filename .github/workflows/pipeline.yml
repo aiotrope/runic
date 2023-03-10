@@ -1,12 +1,12 @@
-name: Basic Pipeline
+name: Pull Request Pipeline
 
 on:
-  push:
-    branches: ['main']
-    paths-ignore:
-      - 'README.md'
-  pull_request:
-    branches: ['main']
+  # push:
+  # branches: ['main']
+  # paths-ignore:
+  # - 'README.md'
+  pull_request_review::
+    types: [submitted]
 
 # env:
 # VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -58,6 +58,14 @@ jobs:
         env:
           DATABASE_URL_TEST: ${{ secrets.DATABASE_URL_TEST }}
         with:
-          build: yarn run build
+          # build: yarn run build
           start: yarn run start:test
           wait-on: http://localhost:8000
+
+  release:
+    if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - run: echo "This PR was approved"
+   

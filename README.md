@@ -14,23 +14,38 @@ Date: 7.3.2023
 # generate express app using express-generator
 $ express --view=ejs backend
 
-# dev server
+# generate react app
+$ yarn create react-app frontend .
+
+# run backend dev server at port:8000
 $ yarn dev
 
-# build production server
-$ yarn build
+# run production app at port:8000
+$ yarn start
 
-# format & lint code
-$ yarn prettier && yarn eslint
+# run frontend dev server at port:3000
+$ cd frontend && yarn run start
+
+# build production server backend 
+$ yarn build:be
+
+# build frontend for production
+$ yarn build:fe
+
+# format code
+$ yarn prettier
+
+# lint code
+$ yarn eslint
+
+# run in test environment
+$ yarn start:test
 
 # run backend unit test
 $ yarn test
 
-# production server
-$ yarn start
-
-# generate react app
-$ yarn create react-app frontend .
+# run e2e test
+$ yarn test:e2e
 
 ```
 

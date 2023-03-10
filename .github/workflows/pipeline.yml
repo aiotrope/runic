@@ -46,8 +46,6 @@ jobs:
         run: yarn run build:fe
       - name: Backend Tests
         run: yarn run test
-        with:
-          start: yarn run start:test
       - name: e2e Test
         uses: cypress-io/github-action@v4
         with:

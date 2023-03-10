@@ -16,12 +16,6 @@ const app = express()
 
 dbConnection()
 
-// view engine setup
-//app.set('build', path.join(__dirname, '../build'))
-//app.set('view engine', 'ejs')
-
-app.use(express.static(path.join(__dirname, '../build')))
-
 app.use(cookieParser())
 
 app.use(express.json())
@@ -31,6 +25,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cors())
 
 //app.use(express.static('build'))
+app.use(express.static(path.join(__dirname, '../build')))
 
 app.use(helmet())
 

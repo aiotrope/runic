@@ -15,8 +15,7 @@
     "start:test": "NODE_ENV=test node ./dist/index",
     "test": "NODE_ENV=test jest --verbose --runInBand --forceExit --detectOpenHandles",
     "cypress:open": "cypress open",
-    "test:e2e": "cypress run",
-    "build": "npm run build:be"
+    "test:e2e": "cypress run"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -49,9 +48,5 @@
     "nodemon": "^2.0.21",
     "prettier": "^2.8.4",
     "supertest": "^6.3.3"
-  },
-  "engines": {
-    "npm": ">=8.0.0 <9.0.0",
-    "node": ">=16.0.0 <17.0.0"
   }
 }

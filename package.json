@@ -10,7 +10,7 @@
     "build:fe": "rm -rf build && cd frontend && rm -rf build && npm run build:prod && cp -r build ../",
     "eslint": "eslint --ignore-path .eslintignore",
     "lint": "npm run eslint --fix",
-    "prettier": "prettier --ignore-path .prettierignore --check \"**/*.+(js|ts|jsx|json)\"",
+    "prettier": "prettier --ignore-path .prettierignore --check \"**/*.+(js|ts|jsx)\"",
     "format": "npm run prettier --write",
     "start:test": "NODE_ENV=test node ./dist/index",
     "test": "NODE_ENV=test jest --verbose --runInBand --forceExit --detectOpenHandles",
@@ -50,7 +50,7 @@
     "supertest": "^6.3.3"
   },
   "engines": {
-    "npm" : ">=8.0.0 <9.0.0",
-    "node" : ">=16.0.0 <17.0.0"
+    "npm": ">=8.0.0 <9.0.0",
+    "node": ">=16.0.0 <17.0.0"
   }
 }

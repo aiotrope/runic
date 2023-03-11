@@ -16,7 +16,7 @@
     "test": "NODE_ENV=test jest --verbose --runInBand --forceExit --detectOpenHandles",
     "cypress:open": "cypress open",
     "test:e2e": "cypress run",
-    "build": "npm run build:be && npm run build:fe"
+    "build": "npm run build:be"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

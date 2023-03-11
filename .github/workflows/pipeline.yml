@@ -57,8 +57,7 @@ jobs:
 
       - name: Build Project Artifacts on Production
         if: ${{ success() }}
-        run: |
-          npm run build:be && npm run build:fe
+        run: npm run build
         env:
           REACT_APP_BASE_URL: ''
   

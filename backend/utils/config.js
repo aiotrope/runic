@@ -2,9 +2,9 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const DATABASE_URL_DEV = process.env.DATABASE_URL_DEV
-const DATABASE_URL_TEST = process.env.DATABASE_URL_TEST
-const DATABASE_URL = process.env.DATABASE_URL
+const DATABASE_URL_DEV = process.env.DATABASE_URL_DEV || 'mongodb://localhost:27017/runicDEV'
+const DATABASE_URL_TEST = process.env.DATABASE_URL_TEST || 'mongodb://localhost:27017'
+const DATABASE_URL = process.env.DATABASE_URL || ''
 const PORT = process.env.PORT || 8000
 const DB_NAME = process.env.DB_NAME
 

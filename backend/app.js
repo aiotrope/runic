@@ -1,5 +1,5 @@
 import express from 'express'
-import path from 'path'
+//import path from 'path'
 import cookieParser from 'cookie-parser'
 import helmet from 'helmet'
 import cors from 'cors'
@@ -8,7 +8,7 @@ import dbConnection from './utils/db'
 import { morganMiddleware } from './utils/logger'
 import middleware from './utils/middleware'
 
-import personRouter from './controllers/person'
+import personRouter from './controllers/person.js'
 
 const app = express()
 
@@ -24,8 +24,8 @@ app.use(cors())
 
 //app.use(cors({ origin: 'https://runic-tau.vercel.app' }));
 
-//app.use(express.static('build'))
-app.use(express.static(path.join(__dirname, '../build')))
+app.use(express.static('build'))
+//app.use(express.static(path.join(__dirname, '../build')))
 
 app.use(helmet())
 

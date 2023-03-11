@@ -4,11 +4,10 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "start": "node ./dist/index",
-    "dev": "nodemon --exec babel-node ./backend/index",
+    "start": "NODE_ENV=production node ./dist/index",
+    "dev": "NODE_ENV=development nodemon --exec babel-node ./backend/index",
     "build:be": "rm -rf dist/ && babel ./backend --out-dir dist --copy-files",
     "build:fe": "rm -rf build && cd frontend && rm -rf build && yarn run build:prod && cp -r build ../",
-    "build:devFE": "NODE_ENV=test rm -rf build && cd frontend && rm -rf build && yarn run build:dev && cp -r build ../",
     "eslint": "eslint --ignore-path .eslintignore",
     "lint": "yarn run eslint --fix",
     "prettier": "prettier --ignore-path .prettierignore --check \"**/*.+(js|ts|jsx|json)\"",

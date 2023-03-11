@@ -62,7 +62,6 @@ jobs:
   deploy:
     if: ${{ (github.event.pull_request.merged == true) && (!contains(github.event.head_commit.message, '#skip')) }}
     runs-on: ubuntu-latest
-    # needs: [build]
     strategy:
       matrix:
         node-version: [16.x]
@@ -83,12 +82,14 @@ jobs:
           touch .env
           echo REACT_APP_BASE_URL="https://runic-tau.vercel.app" >> .env
           echo DATABASE_URL=${{ secrets.DATABASE_URL }} >> .env
+          cat .env
       - name: Build Project Artifacts for Backend
         run: yarn build:be
       - name: Create Frontend ENV File
         run: |
           cd frontend/ && rm -rf .env.development && touch .env
           echo REACT_APP_BASE_URL="https://runic-tau.vercel.app" >> .env
+          cat .env
 
       - name: Build Frontend Project Artifacts
         run: yarn build:fe
@@ -97,7 +98,7 @@ jobs:
 
   release:
     runs-on: ubuntu-latest
-    needs: [build, deploy]
+    needs: [deploy]
     strategy:
       matrix:
         node-version: [16.x]

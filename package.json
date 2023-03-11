@@ -4,10 +4,10 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "start": "NODE_ENV=production node ./dist/index",
-    "dev": "NODE_ENV=development nodemon --exec babel-node ./backend/index",
-    "build:be": "NODE_ENV=production rm -rf dist/ && babel ./backend --out-dir dist --copy-files",
-    "build:fe": "NODE_ENV=production rm -rf build && cd frontend && rm -rf build && yarn run build:prod && cp -r build ../",
+    "start": "node ./dist/index",
+    "dev": "nodemon --exec babel-node ./backend/index",
+    "build:be": "rm -rf dist/ && babel ./backend --out-dir dist --copy-files",
+    "build:fe": "rm -rf build && cd frontend && rm -rf build && yarn run build:prod && cp -r build ../",
     "build:devFE": "NODE_ENV=test rm -rf build && cd frontend && rm -rf build && yarn run build:dev && cp -r build ../",
     "eslint": "eslint --ignore-path .eslintignore",
     "lint": "yarn run eslint --fix",
@@ -15,8 +15,8 @@
     "format": "yarn run prettier --write",
     "start:test": "NODE_ENV=test node ./dist/index",
     "test": "NODE_ENV=test jest --verbose --runInBand --forceExit --detectOpenHandles",
-    "cypress:open": "NODE_ENV=test cypress open",
-    "test:e2e": "NODE_ENV=test cypress run"
+    "cypress:open": "cypress open",
+    "test:e2e": "cypress run"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

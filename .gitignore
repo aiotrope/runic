@@ -128,7 +128,5 @@ typings/
 
 node_modules
 
-build/
-
 dist/
 .vercel

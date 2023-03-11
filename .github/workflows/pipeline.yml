@@ -55,10 +55,6 @@ jobs:
           start: npm run start:test
           wait-on: http://localhost:8000
 
-      - name: Build Project Artifacts on Production
-        if: ${{ success() }}
-        run: npm run build
-
   release:
     if: ${{ github.event.pull_request.merged == true }}
     runs-on: ubuntu-latest

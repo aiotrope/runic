@@ -1,6 +1,7 @@
 # runic
 
 FSO Part 11: CI/CD Project
+
 This project is accompanied by module exercises (full-stack-open-pokedex), which can be found in [this repository](https://github.com/aiotrope/full-stack-open-pokedex).
 
 Project based on [this code repository](https://github.com/aiotrope/passlist) with added backend unit tests, e2e test and automation pipeline.

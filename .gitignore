@@ -126,7 +126,7 @@ typings/
 
 .vscode/
 
-build/
+build
 
 node_modules
 

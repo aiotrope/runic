@@ -50,5 +50,8 @@
   "devDependencies": {
     "sass": "^1.58.3"
   },
-  "proxy": "http://localhost:8000"
+  "proxy": "http://localhost:8000",
+  "engines": {
+    "node": ">=14.20.1 <17.0.0"
+  }
 }

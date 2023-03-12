@@ -12,7 +12,7 @@ Date: 7.3.2023 - 12.3.2023
 
 ## Deployment
 
-Full stack app live at [https://runic.onrender.com](https://runic.onrender.com)
+Hosting and web services by Render live at [https://runic.onrender.com](https://runic.onrender.com)
 
 ### CLI Commands
 

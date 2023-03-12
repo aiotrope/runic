@@ -2,9 +2,9 @@
 
 FSO Part 11: CI/CD Project
 
-This project is accompanied by module exercises (full-stack-open-pokedex), which can be found in [this repository](https://github.com/aiotrope/full-stack-open-pokedex).
+Module exercises (full-stack-open-pokedex) are included with this project and can be found [in this repository](https://github.com/aiotrope/full-stack-open-pokedex).
 
-Project based on [this code repository](https://github.com/aiotrope/passlist) with added backend unit tests, e2e test and automation pipeline.
+Project built using [this code repository](https://github.com/aiotrope/passlist) from the Phonebook exercise, with automation pipeline, backend unit tests, and e2e tests added.
 
 Date: 7.3.2023 - 12.3.2023
 
@@ -12,7 +12,7 @@ Date: 7.3.2023 - 12.3.2023
 
 ## Deployment
 
-Hosting and web services by `Render` at [https://runic.onrender.com](https://runic.onrender.com)
+Web services by [Render](https://render.com/) and running online at [https://runic.onrender.com](https://runic.onrender.com)
 
 ### CLI Commands
 
@@ -26,13 +26,13 @@ $ yarn create react-app frontend .
 # run backend dev server at port:8000
 $ yarn dev
 
-# run production app at port:8000
+# run production build at port:8000
 $ yarn start
 
 # run frontend dev server at port:3000
 $ cd frontend && yarn run start
 
-# build full stack app
+# build static assets
 $ yarn build
 
 # format code

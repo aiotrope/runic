@@ -32,4 +32,4 @@ PersonSchema.set('toJSON', {
 
 const PersonInfo = mongoose.model('PersonInfo', PersonSchema)
 
-export default PersonInfo
+module.exports = PersonInfo

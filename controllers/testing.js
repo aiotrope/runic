@@ -1,5 +1,5 @@
-import express from 'express'
-import PersonInfo from '../models/person'
+const express = require('express')
+const PersonInfo = require('../models/person')
 
 const router = express.Router()
 

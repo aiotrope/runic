@@ -1,9 +1,9 @@
-import mongoose from 'mongoose'
-import request from 'supertest'
+const mongoose = require('mongoose')
+const request = require('supertest')
 
-import app from '../backend/app'
-import PersonInfo from '../backend/models/person'
-import helper from '../helper'
+const app = require('../app')
+const PersonInfo = require('../models/person.js')
+const helper = require('../helper/index.js')
 
 beforeAll(async () => {
   const keys = Object.keys(mongoose.connection.collections)

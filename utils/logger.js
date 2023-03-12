@@ -1,5 +1,5 @@
-import winston from 'winston'
-import morgan from 'morgan'
+const winston = require('winston')
+const morgan = require('morgan')
 
 const levels = {
   error: 0,
@@ -53,9 +53,14 @@ const skip = () => {
   return env !== 'development'
 }
 
-export const morganMiddleware = morgan(
+const morganMiddleware = morgan(
   ':remote-addr :method :url :status :res[content-length] - :response-time ms',
   { stream, skip }
 )
 
-export default logger
+const loggers = {
+  logger,
+  morganMiddleware,
+}
+
+module.exports = loggers

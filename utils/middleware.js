@@ -1,12 +1,12 @@
-import createHttpError from 'http-errors'
-import logger from './logger'
+const createHttpError = require('http-errors')
+const loggers = require('./logger')
 
 const endPoint404 = (_req, _res, next) => {
   next(createHttpError(404))
 }
 
 const errorHandler = (error, req, res, next) => {
-  logger.error(error.message)
+  loggers.logger.error(error.message)
 
   if (error.name === 'CastError') {
     return res.status(400).json({ error: `${error.value} is not valid ID!` })
@@ -36,4 +36,4 @@ const middleware = {
   errorHandler,
 }
 
-export default middleware
+module.exports = middleware

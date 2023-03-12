@@ -1,6 +1,6 @@
-import express from 'express'
+const express = require('express')
 require('express-async-errors')
-import PersonInfo from '../models/person'
+const PersonInfo = require('../models/person')
 
 const router = express.Router()
 
@@ -63,4 +63,4 @@ router.get('/persons/:id', async (req, res) => {
   res.status(200).json(person)
 })
 
-export default router
+module.exports = router

@@ -1,4 +1,4 @@
-import PersonInfo from '../backend/models/person'
+const PersonInfo = require('../models/person')
 
 const persons = [
   {
@@ -29,4 +29,4 @@ const helper = {
   savedPersons,
 }
 
-export default helper
+module.exports = helper

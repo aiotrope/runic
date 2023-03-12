@@ -1,4 +1,4 @@
-import dotenv from 'dotenv'
+const dotenv = require('dotenv')
 
 dotenv.config()
 
@@ -18,4 +18,4 @@ const config = {
   db_name: DB_NAME,
 }
 
-export default config
+module.exports = config

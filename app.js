@@ -1,14 +1,14 @@
-import express from 'express'
-//import path from 'path'
-import cookieParser from 'cookie-parser'
-import helmet from 'helmet'
-import cors from 'cors'
+const express = require('express')
 
-import dbConnection from './utils/db'
-import { morganMiddleware } from './utils/logger'
-import middleware from './utils/middleware'
+const cookieParser = require('cookie-parser')
+const helmet = require('helmet')
+const cors = require('cors')
 
-import personRouter from './controllers/person.js'
+const dbConnection = require('./utils/db')
+const loggers = require('./utils/logger')
+const middleware = require('./utils/middleware')
+
+const personRouter = require('./controllers/person')
 
 const app = express()
 
@@ -31,7 +31,7 @@ app.use(helmet())
 
 app.use(require('sanitize').middleware)
 
-app.use(morganMiddleware)
+app.use(loggers.morganMiddleware)
 
 app.use('/api', personRouter)
 
@@ -44,4 +44,4 @@ app.use(middleware.endPoint404)
 
 app.use(middleware.errorHandler)
 
-export default app
+module.exports = app

@@ -34,13 +34,11 @@ jobs:
       - name: Install Dependencies Frontend
         run: cd frontend/ && yarn
       - name: Format
-        run: npm run prettier
+        run: yarn prettier
       - name: Lint
-        run: npm run eslint
-      - name: Build Backend
-        run: yarn build:be
-      - name: Build Frontend
-        run: yarn build:fe
+        run: yarn eslint
+      - name: Build App
+        run: yarn build
       - name: Backend Tests
         run: yarn test
         env:
@@ -76,15 +74,8 @@ jobs:
           echo REACT_APP_BASE_URL="https://runic.onrender.com" >> .env
           echo DATABASE_URL=${{ secrets.DATABASE_URL }} >> .env
           cat .env
-      - name: Build Project Artifacts for Backend
-        run: yarn build:be
-      - name: Create Frontend ENV File
-        run: |
-          cd frontend/ && rm -rf .env.development && touch .env
-          echo REACT_APP_BASE_URL="https://runic-tau.vercel.app" >> .env
-          cat .env
-      - name: Build Frontend Project Artifacts
-        run: yarn build:fe
+      - name: Build Project Artifacts
+        run: yarn build
       - name: Deploy Project Artifacts to RENDER
         uses: sws2apps/render-deployment@main
         with:

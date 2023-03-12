@@ -1,6 +1,6 @@
-import mongoose from 'mongoose'
-import config from './config'
-import logger from './logger'
+const mongoose = require('mongoose')
+const config = require('./config')
+const loggers = require('./logger')
 
 let dbURL
 
@@ -28,12 +28,12 @@ const dbConnection = () => {
 
   const db = mongoose.connection
   db.once('open', () => {
-    logger.debug(`Database connected: ${dbURL}`)
+    loggers.logger.debug(`Database connected: ${dbURL}`)
   })
 
   db.on('error', (error) => {
-    logger.error(`connection error: ${error}`)
+    loggers.logger.error(`connection error: ${error}`)
   })
 }
 
-export default dbConnection
+module.exports = dbConnection

@@ -2,7 +2,7 @@ name: Periodic HealthCheck Pipeline
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Run at 00:00 everyday
+    - cron: '0 0 * * *' # Run at 00:00 everyday
 jobs:
   check_url:
     runs-on: ubuntu-latest

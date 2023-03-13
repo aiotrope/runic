@@ -5,7 +5,12 @@ on:
     - cron: "0 0 * * *" # Run at 00:00 everyday
 jobs:
   check_url:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
     steps:
+      - uses: actions/checkout@v3
       - name: Check the deployed URL
         uses: jtalk/url-health-check-action@v3
         with:

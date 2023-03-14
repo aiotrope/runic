@@ -21,6 +21,7 @@ import {
   FormErrorMessage,
   Button,
   Stack,
+  Badge,
 } from '@chakra-ui/react'
 
 import personService from '../../services/person'
@@ -74,13 +75,6 @@ const Person = () => {
   const onSubmit = (dataObj) => {
     updateMutation.mutate(dataObj)
   }
-
-  /* React.useEffect(() => {
-    let defaultValues = {}
-    defaultValues.name = data?.name
-    defaultValues.number = data?.number
-    reset({ ...defaultValues })
-  }, [data?.name, data?.number, reset]) */
 
   if (isLoading || updateMutation.isLoading) {
     return (
@@ -164,6 +158,11 @@ const Person = () => {
           </Stack>
         </form>
       </Box>
+      <Stack direction="row">
+        <Badge variant="solid" colorScheme="green" my="7rem">
+          Status: Approved
+        </Badge>
+      </Stack>
     </>
   )
 }
